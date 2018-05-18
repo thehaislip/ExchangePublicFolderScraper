@@ -18,7 +18,7 @@ namespace ewsAPI
             var kv = new List<KeyValuePair<string, string>>();
             kv.Add(new KeyValuePair<string, string>(@"\Document Library\Agencies\Bureau of Administration\Central Mail", ""));
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            var f = pf.GetAllFolders(@"sd\itpr0it231", "exchange@K#", "folder.admin@state.sd.us", kv).DistinctBy(e => e.FolderPath);
+            var f = pf.GetAllFolders(@"", "", "", kv).DistinctBy(e => e.FolderPath);
             
 
             watch.Stop();
