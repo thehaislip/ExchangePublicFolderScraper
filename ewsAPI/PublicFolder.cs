@@ -216,8 +216,9 @@ namespace ewsAPI
             //service.UseDefaultCredentials = true;
             service.Credentials = new WebCredentials(username, password);
             service.AutodiscoverUrl(email, RedirectionUrlValidationCallback);
-            service.TraceEnabled = true;
-            service.TraceFlags = TraceFlags.All;
+           // service.TraceEnabled = true;
+            //service.TraceFlags = TraceFlags.All;
+            
             return service;
         }
 

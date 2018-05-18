@@ -21,24 +21,30 @@ namespace ewsAPI
             InitializeComponent();
             uiWatch = new Stopwatch();
         }
-        private int time;
+        
         private Stopwatch uiWatch;
         private async void button1_Click(object sender, EventArgs e)
         {
             timer1.Interval = (1000) * (1);
             timer1.Tick += new EventHandler(timer_tick);
+
+            button1.Enabled = false;
             progressBar1.Visible = true;
             progressBar1.Style = ProgressBarStyle.Marquee;
-            button1.Enabled = false;
+
+            var path = await ShowDialogAsync(saveFileDialog1);
+
             timer1.Start();
             uiWatch.Start();
-            var path = await ShowDialogAsync(saveFileDialog1);
-            
+
             Task<string> task = Task.Run(() => GetPublicFolders(txtUserName.Text, txtPassword.Text, txtEmail.Text, path.ToString()));
+
             timer1.Stop();
             uiWatch.Stop();
+
             button1.Enabled = false;
             progressBar1.Visible = false;
+
             richTextBox1.Text = await task;
         }
 
