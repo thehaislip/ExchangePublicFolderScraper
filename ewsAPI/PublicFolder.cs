@@ -16,7 +16,31 @@ namespace ewsAPI
 {
     public class PublicFolder
     {
-
+        public Folder GetFolderByPath(string path,string username, string password, string email) {
+            path = path.Replace('/','\\').Replace("\\\\","");
+            var ar = path.Split('\\');
+            var service = GetEWSService(username,password,email);
+            var fv = new FolderView(1000);
+            fv.PropertySet = GetPropertySet();
+            fv.PropertySet.Add(EWSProperties.PR_PF_Proxy);
+            var folders = service.FindFolders(WellKnownFolderName.PublicFoldersRoot, fv).Folders.FirstOrDefault(e => {
+                e.TryGetProperty(EWSProperties.PR_Display_name, out string displayName);
+                return displayName == ar[0];
+            });
+            var i = 0;
+            foreach (var p in ar)
+            {
+                if (i > 0)
+                {
+                    folders = folders.FindFolders(fv).FirstOrDefault(e => {
+                        e.TryGetProperty(EWSProperties.PR_Display_name, out string displayName);
+                        return displayName == p;
+                    });
+                }
+                i++;
+            }
+            return folders;
+        }
 
         public IEnumerable<PublicFolderModel> GetAllFolders(string username,string password,string email,IEnumerable<KeyValuePair<string,string>> toDelete = null)
         {
@@ -225,7 +249,7 @@ namespace ewsAPI
         private PropertySet GetPropertySet()
         {
             PropertySet propset;
-            propset = new PropertySet(BasePropertySet.IdOnly);
+            propset = new PropertySet(BasePropertySet.FirstClassProperties);
             propset.Add(EWSProperties.Pr_Folder_Path);
             propset.Add(EWSProperties.HasRules);
             propset.Add(EWSProperties.PR_FolderSize);

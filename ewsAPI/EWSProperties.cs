@@ -81,5 +81,13 @@ namespace ewsAPI
                 return new ExtendedPropertyDefinition(3592, MapiPropertyType.Long);
             }
         }
+        public static ExtendedPropertyDefinition PR_PF_Proxy
+        {
+            get
+            {
+                return new ExtendedPropertyDefinition(0x671D, MapiPropertyType.Binary);
+            }
+        }
+        
     }
 }

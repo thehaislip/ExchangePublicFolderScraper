@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ewsAPI", "ewsAPI\ewsAPI.csproj", "{45129B7A-860F-481C-8D45-B746D625105C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ewsAPI.Test", "ewsAPI.Test\ewsAPI.Test.csproj", "{D6BF3BB0-2020-4652-93D7-6177A2DBF76B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{45129B7A-860F-481C-8D45-B746D625105C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45129B7A-860F-481C-8D45-B746D625105C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45129B7A-860F-481C-8D45-B746D625105C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BF3BB0-2020-4652-93D7-6177A2DBF76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BF3BB0-2020-4652-93D7-6177A2DBF76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BF3BB0-2020-4652-93D7-6177A2DBF76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BF3BB0-2020-4652-93D7-6177A2DBF76B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

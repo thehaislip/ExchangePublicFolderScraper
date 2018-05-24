@@ -66,6 +66,12 @@
   <ItemGroup>
     <Compile Include="CSVWriter.cs" />
     <Compile Include="EWSProperties.cs" />
+    <Compile Include="GetSingleFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetSingleFolder.Designer.cs">
+      <DependentUpon>GetSingleFolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScrapePublicFolders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GetSingleFolder.resx">
+      <DependentUpon>GetSingleFolder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScrapePublicFolders.resx">
       <DependentUpon>ScrapePublicFolders.cs</DependentUpon>
     </EmbeddedResource>

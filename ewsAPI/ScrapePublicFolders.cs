@@ -92,5 +92,12 @@ namespace ewsAPI
                 return ex.Message;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GetSingleFolder getSingleFolder = new GetSingleFolder();
+            getSingleFolder.SetCreds(txtUserName.Text,txtPassword.Text,txtEmail.Text);
+            getSingleFolder.Show();
+        }
     }
 }

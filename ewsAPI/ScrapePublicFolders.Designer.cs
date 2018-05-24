@@ -41,6 +41,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelTimer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -126,11 +127,22 @@
             this.labelTimer.Size = new System.Drawing.Size(0, 13);
             this.labelTimer.TabIndex = 9;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(116, 91);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Get Folder By Path";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ScrapePublicFolders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button2;
     }
 }
